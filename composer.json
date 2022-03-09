@@ -1,0 +1,16 @@
+{
+    "name": "vinipaulino/php-moderno",
+    "description": "Projeto PHP criado no curso da Academy SatellaSoft",
+    "require": {
+        "twig/twig": "^3.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        },
+        "files": [
+            "app/Config/Config.php",
+            "app/Functions/Global.php"
+        ]
+    }
+}
