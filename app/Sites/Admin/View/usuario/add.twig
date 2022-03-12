@@ -1,0 +1,56 @@
+{% extends "partials/body.twig" %}
+
+{% block title %}
+Novo usuário
+{% endblock %}
+
+{% block body %}
+
+<section>
+    <h1>Novo usuário</h1>
+
+    <hr>
+
+    <form action="{{ADMIN_BASE}}usuario/insert" method="post" id="frmNovo">
+        <div class="form-row">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" placeholder="Vinicius Paulino">
+        </div>
+
+        <div class="form-row">
+            <label for="usuario">Usuário</label>
+            <input type="text" id="usuario" name="usuario" placeholder="vinicius.paulino">
+        </div>
+
+        <div class="form-row">
+            <label for="usuario">Senha</label>
+            <input type="password" id="senha" name="senha" placeholder="******" autocomplete="new-password">
+        </div>
+
+        <div class="form-row">
+            <label for="status">Status</label>
+            <select name="status" id="status">
+                <option value="2" selected>Bloqueado</option>
+                <option value="1">Ativo</option>
+            </select>
+        </div>
+
+        <div class="form-row">
+            <label for="permissao">Permissão</label>
+            <select name="permissao" id="permissao">
+                <option value="2" selected>Comum</option>
+                <option value="1">Administrador</option>
+            </select>
+        </div>
+
+        <div class="form-row">
+            <button type="submit" class="btn btn-success">Cadastrar</button>
+        </div>
+    </form>
+</section>
+
+{% endblock %}
+
+{% block footer %}
+<script src="{{ BASE }}assets/admin/js/usuario/add.js"></script>
+{% endblock %}

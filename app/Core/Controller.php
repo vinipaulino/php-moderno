@@ -24,6 +24,27 @@ class Controller
             //'cache' => '../cache/',
         ]);
 
+        $twig->addGlobal('BASE', BASE);
+        $twig->addGlobal('ADMIN_BASE', ADMIN_BASE);
+
         echo $twig->render($page, $params);
+    }
+
+
+    /**
+     * Carrega a página de mensagem genérica da aplicação
+     *
+     * @param  mixed $title Título da mensagem
+     * @param  mixed $description Descrição da mensagem
+     * @param  mixed $link Link para retornar
+     * @return void
+     */
+    protected function showMessage(string $title, string $description, string $link = "#")
+    {
+        $this->view('partials.message', [
+            'messageTitle' => $title,
+            'messageDescription' => $description,
+            'messageLink' => $link
+        ]);
     }
 }

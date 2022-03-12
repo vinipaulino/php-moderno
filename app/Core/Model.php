@@ -9,7 +9,7 @@ namespace App\Core;
  *
  * @author Victor Tassinari - victortassinarix@gmail.com
  */
-class Database
+class Model
 {
     private static $connection;
     private $debug;

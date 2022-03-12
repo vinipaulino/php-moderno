@@ -17,7 +17,9 @@ class Core
     {
         $uri = $_SERVER['REQUEST_URI'];
 
-        $uri = substr($uri, 0, strpos($uri, '?'));
+        if (strpos($uri, '?') > 0) {
+            $uri = substr($uri, 0, strpos($uri, '?'));
+        }
 
         $this->explodeURI = array_values(
             array_filter(explode('/', $uri))

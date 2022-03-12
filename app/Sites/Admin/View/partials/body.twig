@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}{% endblock %}
+        - PHP Moderno SatellaSoft
+    </title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+
+    <link rel="preload" href="{{ BASE }}assets/admin/js/script.js" as="script">
+    <link rel="preload" href="{{ BASE }}assets/admin/css/style.css" as="style">
+    <link rel="stylesheet" href="{{ BASE }}assets/admin/css/style.css"> {% block head %}{% endblock %}
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="{{ ADMIN_BASE }}" aria-label="Logo PHP Moderno">
+                <img src="{{ BASE }}assets/admin/img/logo/php-moderno.png" alt="Logo PHP Moderno" width="200">
+            </a>
+        </div>
+
+        <div class="right-header">
+            <span class="user-name">Olá,
+                <strong>Usuário</strong>
+            </span>
+
+            <a class="logout" href="{{ BASE }}login/logout">Sair</a>
+        </div>
+    </header>
+
+    <aside>
+        {% include "partials/menu.twig" %}
+    </aside>
+
+    <main>
+        {% block body %}{% endblock %}
+    </main>
+
+    <script src="{{ BASE }}assets/admin/js/script.js"></script>
+    {% block footer %}{% endblock %}
+
+</body>
+
+</html>

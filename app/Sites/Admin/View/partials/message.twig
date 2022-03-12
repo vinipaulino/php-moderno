@@ -1,0 +1,15 @@
+{% extends "partials/body.twig" %}
+
+{% block title %}{{ messageTitle }}{% endblock %}
+
+{% block body %}
+
+<section>
+    <h1>{{ messageTitle }}</h1>
+
+    <h2>{{ messageDescription }}</h2>
+
+    <a href="{{messageLink}}" class="btn btn-info">Voltar</a>
+</section>
+
+{% endblock %}

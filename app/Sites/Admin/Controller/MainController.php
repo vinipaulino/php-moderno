@@ -2,10 +2,16 @@
 
 namespace App\Sites\Admin\Controller;
 
-class MainController
+use App\Core\Controller;
+
+class MainController extends Controller
 {
+    public function __construct()
+    {
+        parent::__construct('Admin');
+    }
     public function index()
     {
-        echo 'Index admin';
+        $this->view('home.index');
     }
 }
