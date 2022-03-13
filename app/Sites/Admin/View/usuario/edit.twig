@@ -1,0 +1,47 @@
+{% extends "partials/body.twig" %}
+
+{% block title %}
+Alterar usuário
+{% endblock %}
+
+{% block body %}
+
+<section>
+    <h1>Alterar usuário</h1>
+
+    <hr>
+
+    <form action="{{ADMIN_BASE}}usuario/update/{{ usuario.id }}" method="post" id="frmAtualizar">
+        <div class="form-row">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" placeholder="Vinicius Paulino" value="{{ usuario.nome }}">
+        </div>
+
+        <div class="form-row">
+            <label for="usuario">Usuário</label>
+            <input type="text" id="usuario" name="usuario" placeholder="vinicius.paulino" value="{{ usuario.usuario }}">
+        </div>
+
+        <div class="form-row">
+            <label for="status">Status</label>
+            <select name="status" id="status">
+                <option value="2" {{ usuario.status==2 ? 'selected' : '' }}>Bloqueado</option>
+                <option value="1" {{ usuario.status==1 ? 'selected' : '' }}>Ativo</option>
+            </select>
+        </div>
+
+        <div class="form-row">
+            <label for="permissao">Permissão</label>
+            <select name="permissao" id="permissao">
+                <option value="2" {{ usuario.permissao==2 ? 'selected' : '' }}>Comum</option>
+                <option value="1" {{ usuario.permissao==1 ? 'selected' : '' }}>Administrador</option>
+            </select>
+        </div>
+
+        <div class="form-row">
+            <button type="submit" class="btn btn-success">Alterar</button>
+        </div>
+    </form>
+</section>
+
+{% endblock %}

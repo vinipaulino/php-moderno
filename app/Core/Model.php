@@ -103,7 +103,7 @@ class Model
     * returns the result of a query (select) of only one row
     * @param string $sql the sql string
     * @param array $params the array of parameters (array(":col1" => "val1",":col2" => "val2"))
-    * @return one position array for the result of query
+    * @return mixed position array for the result of query
     */
     public function executeQueryOneRow($sql, $params = null)
     {

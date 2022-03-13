@@ -1,0 +1,39 @@
+{% extends "partials/body.twig" %}
+
+{% block title %}
+Alterar senha
+{% endblock %}
+
+{% block body %}
+
+<section>
+    <h1>Alterar senha</h1>
+
+    <hr>
+
+    <form action="{{ADMIN_BASE}}usuario/updatePass/{{ usuario.id }}" method="post" id="frmAlterarSenha">
+        <div class="form-row">
+            <label for="usuario">Senha</label>
+            <input type="password" id="senha" name="senha" placeholder="******" autocomplete="new-password">
+        </div>
+
+        <div class="form-row">
+            <label for="confirmaSenha">Confirmar Senha</label>
+            <input type="password" id="confirmaSenha" name="confirmaSenha" placeholder="******"
+                autocomplete="new-password">
+        </div>
+
+        <div class="form-row" id="dvAlert">
+        </div>
+
+        <div class="form-row">
+            <button type="submit" class="btn btn-success">Alterar senha</button>
+        </div>
+    </form>
+</section>
+
+{% endblock %}
+
+{% block footer %}
+<script src="{{ BASE }}assets/admin/js/usuario/altera-senha.js"></script>
+{% endblock %}

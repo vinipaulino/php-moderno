@@ -8,6 +8,34 @@
     <h1>Gerenciar usuários</h1>
 
     <a href="{{ ADMIN_BASE }}usuario/add" class="btn btn-info">Novo Usuário</a>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#ID</th>
+                <th>Nome</th>
+                <th>Usuário</th>
+                <th>Status</th>
+                <th>Permissão</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for usuario in usuarios %}
+            <tr>
+                <td>{{ usuario.id }}</td>
+                <td>{{ usuario.nome }}</td>
+                <td>{{ usuario.usuario }}</td>
+                <td>{{ usuario.status == 1 ? 'Ativo' : 'Bloqueado' }}</td>
+                <td>{{ usuario.permissao == 1 ? 'Administrador' : 'Comum' }}</td>
+                <td>
+                    <a href="{{ ADMIN_BASE }}usuario/edit/{{ usuario.id }}" class="btn btn-warning">Editar</a>
+                    <a href="{{ ADMIN_BASE }}usuario/pass/{{ usuario.id }}" class="btn btn-info">Senha</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </section>
 
 {% endblock %}
