@@ -9,14 +9,15 @@
     <link rel="preload" href="{{ BASE }}assets/main/css/style.css" as="style">
     <link rel="stylesheet" href="{{ BASE }}assets/main/css/style.css">
 
-    <title>{% block title %}{% endblock %}</title>
+    <link rel="shortcut icon" href="{{ BASE }}assets/main/img/logo/favicon.ico" type="image/x-icon">
+
+    <title>{% block title %}{% endblock %} - PHP Moderno</title>
 
     {% block head %}{% endblock %}
 </head>
 
 <body>
     {% include "partials/head.twig" %}
-
 
     {% block body %}{% endblock %}
 

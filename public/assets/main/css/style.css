@@ -30,6 +30,22 @@
     margin: 0 auto;
 }
 
+.max-img {
+    width: 100%;
+    max-width: var(--container-width);
+    height: auto;
+}
+
+hr {
+    margin: 15px 0;
+    border-bottom: 1px solid var(--color-dark-grey);
+}
+
+p {
+    margin-bottom: 25px;
+    font-size: 19px;
+}
+
 .form-row {
     margin-bottom: 15px;
     display: block;
@@ -164,7 +180,38 @@ h3 {
     margin-top: 5%;
     width: 100%;
     max-width: 500px;
+    padding: 10px;
+}
+
+#login-form form {
     background-color: var(--color-black);
     box-shadow: 0 0 10px var(--color-black);
     padding: 10px;
+}
+
+/* atualizacao-card */
+
+.atualizacao-card {
+    background-color: var(--color-light-grey);
+    padding: 10px 20px;
+    margin: 15px 0;
+}
+
+.atualizacao-card h1 {
+    font-size: 1.5em;
+}
+
+.atualizacao-card h2 {
+    font-size: 1.1em;
+    font-weight: normal;
+}
+
+/* Home */
+
+.img-destaque {
+    background-image: url("../img/other/infra.jpg");
+    height: 450px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
 }

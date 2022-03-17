@@ -1,0 +1,23 @@
+{% extends "partials/body.twig" %}
+
+{% block title %}{{ atualizacao.titulo }}{% endblock %}
+
+{% block body %}
+
+<main>
+    <div class="max-width center-div m-t-10">
+        <h1>{{ atualizacao.titulo }}</h1>
+
+        <p>Publicado por: <strong>{{ atualizacao.usuario_nome }}</strong></p>
+
+        <hr>
+
+        <div>
+            {{ atualizacao.descricao | raw }}
+        </div>
+    </div>
+
+
+</main>
+
+{% endblock %}

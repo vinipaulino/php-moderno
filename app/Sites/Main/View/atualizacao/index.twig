@@ -1,0 +1,21 @@
+{% extends "partials/body.twig" %}
+
+{% block title %}Atualizações{% endblock %}
+
+{% block body %}
+
+<main>
+    <div class="max-width center-div m-t-10">
+        <h1>Confira as nossas últimas atualizações</h1>
+
+        {% for atualizacao in atualizacoes %}
+
+        {% include "partials/components/atualizacao-card.twig" %}
+
+        {% endfor %}
+    </div>
+
+
+</main>
+
+{% endblock %}

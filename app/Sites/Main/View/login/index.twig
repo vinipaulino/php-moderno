@@ -5,27 +5,26 @@
 {% block body %}
 
 <main>
-    <div class="max-width center-div text-center m-t-10">
-        <h1>Acessar a sua conta</h1>
-    </div>
+    <div class="max-width center-div">
+        <div id="login-form" class="center-div">
+            <h1 class="text-center">Acessar a sua conta</h1>
+            <form action="{{ BASE }}login/auth" method="post" id="frmLogin">
 
-    <div id="login-form" class="max-width center-div">
-        <form action="{{ BASE }}login/auth" method="post" id="frmLogin">
+                <div class="form-row">
+                    <label for="usuario">Usuário</label>
+                    <input type="text" name="usuario" id="usuario">
+                </div>
 
-            <div class="form-row">
-                <label for="usuario">Usuário</label>
-                <input type="text" name="usuario" id="usuario">
-            </div>
+                <div class="form-row">
+                    <label for="senha">Senha</label>
+                    <input type="password" name="senha" id="senha">
+                </div>
 
-            <div class="form-row">
-                <label for="senha">Senha</label>
-                <input type="password" name="senha" id="senha">
-            </div>
-
-            <div class="form-row">
-                <input type="submit" value="Login" class="btn btn-info">
-            </div>
-        </form>
+                <div class="form-row">
+                    <input type="submit" value="Login" class="btn btn-info">
+                </div>
+            </form>
+        </div>
     </div>
 </main>
 
