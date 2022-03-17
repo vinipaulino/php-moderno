@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preload" href="{{ BASE }}assets/main/css/style.css" as="style">
+    <link rel="stylesheet" href="{{ BASE }}assets/main/css/style.css">
+
+    <title>{% block title %}{% endblock %}</title>
+
+    {% block head %}{% endblock %}
+</head>
+
+<body>
+    {% include "partials/head.twig" %}
+
+
+    {% block body %}{% endblock %}
+
+    {% block footer %}{% endblock %}
+</body>
+
+</html>

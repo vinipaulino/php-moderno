@@ -1,0 +1,51 @@
+{% extends "partials/body.twig" %}
+
+{% block title %}
+Nova Atualização
+{% endblock %}
+
+{% block head %}
+<link rel="preload" href="https://cdn.ckeditor.com/ckeditor5/30.0.0/classic/ckeditor.js" as="script">
+<style>
+    .ck-editor__editable_inline {
+        min-height: 400px;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+
+<section>
+    <h1>Nova Atualização</h1>
+
+    <hr>
+
+    <form action="{{ADMIN_BASE}}atualizacao/insert" method="post" id="frmNovo">
+        <div class="form-row">
+            <label for="titulo">Título</label>
+            <input type="text" id="titulo" name="titulo" placeholder="Como formatar seu PC.">
+        </div>
+
+        <div class="form-row">
+            <label for="descricao">Descrição</label>
+            <textarea type="text" id="descricao" name="descricao" placeholder="Como formatar seu PC."></textarea>
+        </div>
+
+        <div class="form-row">
+            <button type="submit" class="btn btn-success">Cadastrar</button>
+        </div>
+    </form>
+</section>
+
+{% endblock %}
+
+{% block footer %}
+<script src="https://cdn.ckeditor.com/ckeditor5/30.0.0/classic/ckeditor.js"></script>
+<script>
+    ClassicEditor
+        .create(document.querySelector('#descricao'))
+        .catch(error => {
+            console.error(error);
+        });
+</script>
+{% endblock %}

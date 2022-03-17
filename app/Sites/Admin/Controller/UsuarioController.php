@@ -5,6 +5,7 @@ namespace App\Sites\Admin\Controller;
 use App\Classes\Date;
 use App\Classes\Input;
 use App\Core\Controller;
+use App\Core\Security;
 use App\Sites\Admin\Entities\Usuario;
 use App\Sites\Admin\Model\UsuarioModel;
 
@@ -13,6 +14,8 @@ class UsuarioController extends Controller
     public function __construct()
     {
         parent::__construct('Admin');
+
+        Security::protected([1]);
     }
 
     public function index()

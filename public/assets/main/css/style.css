@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+:root {
+    --color-blue: #2b78d2;
+    --color-dark-grey: #2a3a49;
+    --color-light-grey: #f0f0f0;
+    --color-black: #1b2630;
+    --color-white: #fff;
+    --container-width: 1280px;
+}
+
+* {
+    font-family: "Lato", sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+}
+
+/* HELPERS */
+
+.max-width {
+    width: 100%;
+    max-width: var(--container-width);
+}
+
+.center-div {
+    margin: 0 auto;
+}
+
+.form-row {
+    margin-bottom: 15px;
+    display: block;
+}
+
+.form-row label {
+    color: var(--color-light-grey);
+    display: block;
+    font-size: 18px;
+    padding-bottom: 5px;
+}
+
+.form-row input[type="text"],
+.form-row input[type="password"] {
+    display: block;
+    width: 100%;
+    padding: 15px 10px;
+    border-radius: 3px;
+}
+
+.form-row input[type="text"]:focus,
+.form-row input[type="password"]:focus {
+    box-shadow: 0 0 10px var(--color-white);
+}
+
+.text-center {
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.6em;
+    margin: 10px 0;
+}
+
+h2 {
+    font-size: 1.8em;
+    margin: 10px 0;
+}
+
+h3 {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.m-t-10 {
+    margin-top: 10px;
+}
+
+/* BUTTONS */
+
+.btn {
+    padding: 10px 20px;
+    font-size: 18px;
+    display: inline-block;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.btn-info {
+    color: #fff;
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #157347;
+    border-color: #157347;
+}
+
+.btn-warning {
+    color: #fff;
+    background-color: #ff9307;
+    border-color: #ff9307;
+}
+
+.btn-danger {
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+/* HELPERS */
+
+#header-topo {
+    background-color: var(--color-dark-grey);
+    border-bottom: 5px solid var(--color-black);
+    display: block;
+    width: 100%;
+}
+
+#header-topo .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header-topo .logo-topo {
+    max-width: 80px;
+    width: 100%;
+    height: auto;
+}
+
+#header-topo nav ul {
+    list-style: none;
+}
+
+#header-topo nav ul li {
+    display: inline-block;
+}
+
+#header-topo nav ul li a {
+    padding: 30px 10px;
+    display: block;
+    color: var(--color-white);
+    font-size: 19px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+#header-topo nav ul li a:hover {
+    background-color: var(--color-black);
+}
+
+/* FORM LOGIN */
+
+#login-form {
+    margin-top: 5%;
+    width: 100%;
+    max-width: 500px;
+    background-color: var(--color-black);
+    box-shadow: 0 0 10px var(--color-black);
+    padding: 10px;
+}

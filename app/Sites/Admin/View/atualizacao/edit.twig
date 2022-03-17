@@ -1,0 +1,53 @@
+{% extends "partials/body.twig" %}
+
+{% block title %}
+Editar Atualização
+{% endblock %}
+
+{% block head %}
+<link rel="preload" href="https://cdn.ckeditor.com/ckeditor5/30.0.0/classic/ckeditor.js" as="script">
+<style>
+    .ck-editor__editable_inline {
+        min-height: 400px;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+
+<section>
+    <h1>Editar Atualização</h1>
+
+    <hr>
+
+    <form action="{{ADMIN_BASE}}atualizacao/update/{{ atualizacao.id }}" method="post" id="frmEditar">
+        <div class="form-row">
+            <label for="titulo">Título</label>
+            <input type="text" id="titulo" name="titulo" placeholder="Como formatar seu PC."
+                value="{{ atualizacao.titulo }}">
+        </div>
+
+        <div class="form-row">
+            <label for="descricao">Descrição</label>
+            <textarea type="text" id="descricao" name="descricao"
+                placeholder="Como formatar seu PC.">{{ atualizacao.descricao | raw }}</textarea>
+        </div>
+
+        <div class="form-row">
+            <button type="submit" class="btn btn-success">Atualizar</button>
+        </div>
+    </form>
+</section>
+
+{% endblock %}
+
+{% block footer %}
+<script src="https://cdn.ckeditor.com/ckeditor5/30.0.0/classic/ckeditor.js"></script>
+<script>
+    ClassicEditor
+        .create(document.querySelector('#descricao'))
+        .catch(error => {
+            console.error(error);
+        });
+</script>
+{% endblock %}

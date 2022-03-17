@@ -1,3 +1,4 @@
+{% if permission == 1 %}
 <nav>
     <span>Usuário</span>
     <ul>
@@ -5,11 +6,12 @@
         <li><a href="{{ADMIN_BASE}}usuario/add">Novo usuário</a></li>
     </ul>
 </nav>
+{% endif %}
 
 <nav>
     <span>Atualizações</span>
     <ul>
-        <li><a href="{{ADMIN_BASE}}usuario/">Listar todos</a></li>
-        <li><a href="{{ADMIN_BASE}}usuario/">Nova atualização</a></li>
+        <li><a href="{{ADMIN_BASE}}atualizacao/">Listar todos</a></li>
+        <li><a href="{{ADMIN_BASE}}atualizacao/add">Nova atualização</a></li>
     </ul>
 </nav>

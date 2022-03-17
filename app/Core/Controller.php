@@ -2,6 +2,8 @@
 
 namespace App\Core;
 
+use App\Classes\Session;
+
 class Controller
 {
     private string $base;
@@ -27,6 +29,9 @@ class Controller
         $twig->addGlobal('BASE', BASE);
         $twig->addGlobal('ADMIN_BASE', ADMIN_BASE);
 
+        $twig->addGlobal('username', $_COOKIE['username'] ?? "Usuário");
+        $twig->addGlobal('permission', Session::get('permission'));
+
         echo $twig->render($page, $params);
     }
 
@@ -39,8 +44,10 @@ class Controller
      * @param  mixed $link Link para retornar
      * @return void
      */
-    protected function showMessage(string $title, string $description, string $link = "#")
+    protected function showMessage(string $title, string $description, string $link = "#", int $httpCode = 200)
     {
+        http_response_code($httpCode);
+
         $this->view('partials.message', [
             'messageTitle' => $title,
             'messageDescription' => $description,

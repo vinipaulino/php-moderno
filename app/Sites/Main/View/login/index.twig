@@ -1,0 +1,36 @@
+{% extends "partials/body.twig" %}
+
+{% block title %}Login{% endblock %}
+
+{% block body %}
+
+<main>
+    <div class="max-width center-div text-center m-t-10">
+        <h1>Acessar a sua conta</h1>
+    </div>
+
+    <div id="login-form" class="max-width center-div">
+        <form action="{{ BASE }}login/auth" method="post" id="frmLogin">
+
+            <div class="form-row">
+                <label for="usuario">Usuário</label>
+                <input type="text" name="usuario" id="usuario">
+            </div>
+
+            <div class="form-row">
+                <label for="senha">Senha</label>
+                <input type="password" name="senha" id="senha">
+            </div>
+
+            <div class="form-row">
+                <input type="submit" value="Login" class="btn btn-info">
+            </div>
+        </form>
+    </div>
+</main>
+
+{% endblock %}
+
+{% block footer %}
+<script src="{{ BASE }}assets/main/js/login.js"></script>
+{% endblock %}

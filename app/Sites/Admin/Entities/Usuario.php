@@ -39,11 +39,35 @@ class Usuario
     }
 
     /**
+     * Set the value of id
+     *
+     * @return  self
+     */
+    public function setId(int $id): self
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    /**
      * Get the value of nome
      */
     public function getNome(): ?string
     {
         return $this->nome;
+    }
+
+    /**
+     * Set the value of nome
+     *
+     * @return  self
+     */
+    public function setNome(string $nome): self
+    {
+        $this->nome = $nome;
+
+        return $this;
     }
 
     /**

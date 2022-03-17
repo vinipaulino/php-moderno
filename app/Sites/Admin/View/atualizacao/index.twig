@@ -1,0 +1,36 @@
+{% extends "partials/body.twig" %}
+
+{% block title %}Gerenciar atualizações{% endblock %}
+
+{% block body %}
+
+<section>
+    <h1>Gerenciar atualizações</h1>
+
+    <a href="{{ ADMIN_BASE }}atualizacao/add" class="btn btn-info">Novo Atualização</a>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#ID</th>
+                <th>Título</th>
+                <th>Usuário</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for atualizacao in atualizacoes %}
+            <tr>
+                <td>{{ atualizacao.id }}</td>
+                <td>{{ atualizacao.titulo }}</td>
+                <td>{{ atualizacao.usuario.nome }}</td>
+                <td>
+                    <a href="{{ ADMIN_BASE }}atualizacao/edit/{{ atualizacao.id }}" class="btn btn-warning">Editar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+
+{% endblock %}
